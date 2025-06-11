@@ -10,12 +10,13 @@ import {
   Switch,
   Share,
   Image,
+  Alert,              // <-- добавили
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 /* локальные иконки */
-const ICON_BACK     = require('../assets/ic_arrow_left.png')  // стрелка ‹
-const ICON_SHARE    = require('../assets/ic_share.png')       // иконка шаринга
+const ICON_BACK  = require('../assets/ic_arrow_left.png')
+const ICON_SHARE = require('../assets/ic_share.png')
 
 export default function SettingsScreen() {
   const navigation = useNavigation()
@@ -35,13 +36,21 @@ export default function SettingsScreen() {
     }
   }
 
+  // Вместо навигации показываем алерт
   const onOpenTerms = () => {
-    navigation.navigate('Terms')
+    Alert.alert(
+      'Coming Soon',
+      'Terms of Use will be added soon.',
+      [{ text: 'OK', style: 'default' }]
+    )
   }
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={styles.header.backgroundColor} />
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={styles.header.backgroundColor}
+      />
 
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -92,23 +101,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   iconSmall: {
-    marginTop:10,
+    marginTop: 10,
     width: 24,
     height: 24,
     tintColor: '#000',
-    resizeMode:'contain',
-    
+    resizeMode: 'contain',
   },
   iconSmall2: {
- 
     width: 24,
     height: 24,
-  
-    resizeMode:'contain',
-    
+    resizeMode: 'contain',
   },
   title: {
-    marginTop:10,
+    marginTop: 10,
     fontSize: 18,
     fontWeight: '600',
     color: '#000',
