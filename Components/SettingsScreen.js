@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: 24,
     height: 24,
-    tintColor: '#000',
+    color: '#FFFF',
     resizeMode: 'contain',
   },
   iconSmall2: {
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 18,
     fontWeight: '600',
-    color: '#000',
+    color: '#FFFF',
   },
   body: {
     flex: 1,
